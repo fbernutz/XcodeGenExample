@@ -67,4 +67,4 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/version
 
-.swiftlint.yml
+xcodegenExample.xcodeproj/

@@ -1,0 +1,66 @@
+name: xcodegenExample # The name of the App
+options: # Some general settings for the projectproject.yml
+  createIntermediateGroups: true # If the folders are nested, also nest the groups in Xcode
+  indentWidth: 4 # indent by 4 spaces
+  tabWidth: 4 # a tab is 4 spaces
+  bundleIdPrefix: "de.adorsys.ios"
+configs:
+  Debug: debug
+  integ: debug
+  test: debug
+  Release: release
+targets:
+  xcodegenExample:
+    type: application
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources:  
+      - path: xcodegenExample
+    scheme: 
+      testTargets:
+        - xcodegenExampleTests
+        - xcodegenExampleUITests
+      gatherCoverageData: true
+  xcodegenExampleTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources:
+      - path: xcodegenExampleTests
+    dependencies:
+      - target: xcodegenExample
+    scheme: 
+      testTargets:
+        - xcodegenExample
+        - xcodegenExampleTests
+      gatherCoverageData: true
+  xcodegenExampleUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: xcodegenExampleUITests
+    dependencies:
+      - target: xcodegenExample
+# scheme: 
+#   xcodegenExampleTests:
+#     build: 
+#       targets:
+#         xcodegenExample: all
+#         xcodegenExampleTests: [build, test]
+#     test: 
+#       config: debug
+#       # commandLineArguments: "--option value"
+#       # environmentVariables:
+#       #   RUN_ENV_VAR: VALUE
+#       targets: [Tester1, Tester2]
+#       gatherCoverageData: true
+#       environmentVariables:
+#         - variable: hostname
+#           value: dev
+#           isEnabled: true
+#         - variable: hostname
+#           value: test
+#           isEnabled: false
+#         - variable: hostname
+#           value: integ
+#           isEnabled: false

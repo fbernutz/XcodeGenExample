@@ -1,6 +1,6 @@
 # XcodeGen
 
-This is an example project to test **XcodeGen** and to present it to my colleagues. Have a look at their [GitHub][XcodeGen] Repo. There you can find every information you need!
+This is an example project to test **XcodeGen** and to present it to my colleagues. Have a look at the XcodeGen [GitHub][XcodeGen] Repo. There you can find every information you need!
 
 ---
 

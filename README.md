@@ -16,6 +16,8 @@ These are some of the main advantages why it could be a good idea to use XcodeGe
 >- Easily **create new projects** with complicated setups on demand without messing around with Xcode
 >- Generate from anywhere including on **CI**
 
+There is also a fastlane plugin for using `xcodegen` (see [here](https://github.com/NovaTecConsulting/fastlane-plugin-xcodegen)).
+
 ---
 
 ## Install
